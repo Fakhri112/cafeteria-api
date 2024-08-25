@@ -20,14 +20,15 @@ export class CafeService {
 
   createCafe(cafeData: CreateCafeDTO) {
     const newData = this.cafeRepository.create(cafeData);
-    console.log(newData);
     return this.cafeRepository.save(newData);
   }
-  updateCafe(id: number, cafeData: UpdateCafeDTO) {
+  async updateCafe(id: number, cafeData: UpdateCafeDTO) {
     const updateData = this.cafeRepository.create(cafeData);
-    return this.cafeRepository.update({ id }, updateData);
+    await this.cafeRepository.update({ id }, updateData);
+    return 'Menu data has updated successfully';
   }
-  deleteCafe(id: number) {
-    return this.cafeRepository.delete({ id });
+  async deleteCafe(id: number) {
+    await this.cafeRepository.delete({ id });
+    return 'Menu data has deleted successfully';
   }
 }

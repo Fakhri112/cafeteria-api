@@ -10,10 +10,14 @@ export class MenuService {
     @InjectRepository(Menu) private menuRepository: Repository<Menu>,
   ) {}
 
-  getMenu(request: any) {
-    return this.menuRepository.find(
+  async getMenu(request: any) {
+    const datas = await this.menuRepository.find(
       request.user.role == 'user' ? {} : { relations: ['cafe', 'manager'] },
     );
+    datas.map((user) => {
+      if (user.manager) delete user.manager.password;
+    });
+    return datas;
   }
 
   createMenu(menuData: CreateMenuDTO) {
