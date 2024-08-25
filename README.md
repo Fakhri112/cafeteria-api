@@ -59,7 +59,7 @@ $ npm run start:prod
 
 ## API Documentation (Swagger)
 
-[text](http://localhost:3000/api)
+http://localhost:3000/api
 
 ## Test
 
