@@ -32,6 +32,18 @@
 $ npm install
 ```
 
+## ENV EXAMPLE
+
+```bash
+$ DB_TYPE="postgres"
+$ DB_HOST="localhost"
+$ DB_PORT=5432
+$ DB_USERNAME="postgres"
+$ DB_PASSWORD=123
+$ DB_NAME="cafeteria_db"
+$ JWT_SECRET_KEY="secret_key_was_amazing"
+```
+
 ## Running the app
 
 ```bash
